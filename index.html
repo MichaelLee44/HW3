@@ -1,0 +1,117 @@
+<!--
+    Michael Kellems
+    8/31/24
+    CIT 215
+    Prof. Kane
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1> Made by Michael Kellems for CIT 215 </h1>
+    </head>
+    <body>
+
+    </body>
+</html>
+
+<script>
+    let isvalid = false
+    let output = 0
+    let operator = ""
+    let number1 = prompt("Enter your first number.")
+
+    //is a number
+    if (!(isNaN(number1))) {
+        console.log("number 1 = " + number1)
+        console.log(number1)
+
+        operator = prompt("Enter an operator (+,-,*,/,%)")
+
+        //only valid cases for operator are "+, -, *, /, %"
+        switch (operator) { 
+            case "+": 
+                console.log("operator = " + operator)
+                console.log(operator)
+                isvalid = true
+                break;
+            case "-": 
+                console.log("operator = " + operator)
+                console.log(operator)
+                isvalid = true
+                break;
+            case "*": 
+                console.log("operator = " + operator)
+                console.log(operator)
+                isvalid = true
+                break;
+            case "/": 
+                console.log("operator = " + operator)
+                console.log(operator)
+                isvalid = true
+                break;
+            case "%": 
+                console.log("operator = " + operator)
+                console.log(operator)
+                isvalid = true
+                break;
+            default:
+                alert("Invalid Operator Entered")
+                isvalid = false
+                break;
+        }
+    //is not an number
+    } else {
+        alert("Invalid Entry")
+    }
+
+    //a valid operator was provided
+    if (isvalid) {
+        let number2 = prompt("Enter your second number.")
+
+        //is a number
+        if (!(isNaN(number2))) {
+            console.log("number2 = " + number2)
+            console.log(number2)
+            output = number1
+
+            //turn values from string to float for operation
+            output = parseFloat(output)
+            number2 = parseFloat(number2)
+
+            switch (operator) {
+                case "+":
+                    output += number2
+                    console.log("output = " + output)
+                    console.log(output)
+                    break;
+                case "-":
+                    output -= number2
+                    console.log("output = " + output)
+                    console.log(output)
+                    break;
+                case "*":
+                    output *= number2
+                    console.log("output = " + output)
+                    console.log(output)
+                    break;
+                case "/":
+                    output /= number2
+                    console.log("output = " + output)
+                    console.log(output)
+                    break;
+                case "%":
+                    output %= number2
+                    console.log("output = " + output)
+                    console.log(output)
+                    break;
+            }
+
+            //final message
+            alert(number1 + " " + operator + " " + number2 + " = " + output)
+        //not a number 
+        } else {
+            alert("Invalid Entry")
+        }
+    }
+</script>
